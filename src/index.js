@@ -1,6 +1,10 @@
 import app from './app.js';
 
-const port = process.env.PORT || 3000
-app.listen(port)
+import * as dotenv from 'dotenv' 
+dotenv.config()
 
+
+const port = process.env.PORT
+
+app.listen(port);
 console.log("aplicacion iniciada en http:localhost/"+port);
