@@ -1,3 +1,5 @@
+//PROYECTO EN DESARROLLO TODAVIA NO ESTA TERMINADO
+
 //ESTE PROYECTO CONSTA DE 2 PARTES FAVOR DESCARGAR:
 
 ADITI-FRONT
@@ -5,6 +7,16 @@ ADITI-FRONT
 //INSTALAR DEPENDENCIAS:
 
 npm i 
+
+// CONFIGURAR VARIABLES DE ENTORNO LOCALES: (crear archivo .env en la raiz del proyecto)
+
+PORT = 3000
+
+DB_NAME = 'db_aditi'
+DB_USER = 'postgres'
+DB_PASS = 'postgres'
+DB_HOST = 'localhost'
+DB_DIALECT = 'postgres'
 
 // INICIAR SERVIDOR:
 
