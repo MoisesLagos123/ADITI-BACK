@@ -17,7 +17,7 @@ const port = process.env.PORT
 
 async function main() {
     try {
-        await sequelize.sync({force: true});
+        await sequelize.sync({force: false});
         console.log('CONEXION EXITOSA CON LA BASE DE DATOS');
     }catch(error){
         console.log('NO FUE POSIBLE CONECTAR CON LA BASE DE DATOS: ', error);
