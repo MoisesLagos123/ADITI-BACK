@@ -9,9 +9,11 @@ const db_pass = process.env.DB_PASS;
 const db_host = process.env.DB_HOST;
 const db_dialect = process.env.DB_DIALECT;
 
-console.log(db_name,db_user, db_pass, db_host, db_dialect);
 export const sequelize = new Sequelize(
-    db_name,db_user,db_pass, {
+    db_name,
+    db_user,
+    db_pass, 
+    {
         host: db_host,
         dialect: db_dialect
     });

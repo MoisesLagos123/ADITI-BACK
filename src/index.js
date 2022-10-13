@@ -24,7 +24,9 @@ async function main() {
     }
     try{
         app.listen(port);
+        console.log('---------------------------------------------');
         console.log("APLICACION INICIADA EN:  http:localhost/"+port);
+        console.log('---------------------------------------------');
     }catch(error){
         console.log('NO FUE POSIBLE INICIAR LA APLICACION: ', error);
     }

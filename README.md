@@ -1,23 +1,32 @@
-//PROYECTO EN DESARROLLO TODAVIA NO ESTA TERMINADO
+1. PROYECTO EN DESARROLLO (ESTAMOS TRABAJANDO PARA USTED :)
 
-//ESTE PROYECTO CONSTA DE 2 PARTES FAVOR DESCARGAR:
+2. REQUISITOS:
 
-ADITI-FRONT
- 
-//INSTALAR DEPENDENCIAS:
+node v16.x.x    https://nodejs.org/docs/latest-v16.x/api/
+express 4.18.x  https://expressjs.com/en/guide/routing.html
+postgresql      https://www.postgresql.org/docs/
+sequelize       https://sequelize.org/docs/v6/getting-started/
+
+3. ESTE PROYECTO CONSTA DE 2 PARTES FAVOR DESCARGAR:
+
+ADITI-FRONT 
+
+4. INSTALAR DEPENDENCIAS:
 
 npm i 
 
-// CONFIGURAR VARIABLES DE ENTORNO LOCALES: (crear archivo .env en la raiz del proyecto)
+5. CREAR BASE DE DATOS EN postgres con el nombre: db_aditi
+
+6. CONFIGURAR VARIABLES DE ENTORNO LOCALES: (crear archivo .env en la raiz del proyecto)
 
 PORT = 3000
 
 DB_NAME = 'db_aditi'
-DB_USER = 'postgres'
-DB_PASS = 'postgres'
+DB_USER = 'postgres' 
+DB_PASS = 'tu_contraseña'
 DB_HOST = 'localhost'
 DB_DIALECT = 'postgres'
 
-// INICIAR SERVIDOR:
-
+7. INICIAR SERVIDOR:
+ 
 npm run dev
