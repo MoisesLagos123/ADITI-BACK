@@ -24,6 +24,7 @@ async function main() {
     }
     try{
         app.listen(port);
+        console.log();
         console.log('---------------------------------------------');
         console.log("APLICACION INICIADA EN:  http:localhost/"+port);
         console.log('---------------------------------------------');
