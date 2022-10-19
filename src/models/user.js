@@ -7,16 +7,21 @@ export const User = sequelize.define('user',{
         autoIncrement: true
     },
     name:{
-        type: DataType.STRING
+        type: DataType.STRING,
+        required: true
     },
     lastName: {
-        type: DataType.STRING
+        type: DataType.STRING,
+        required: true
     },
     email: {
-        type: DataType.STRING
+        type: DataType.STRING,
+        required: true,
+        unique: true
     },
     pass: {
-        type: DataType.STRING
+        type: DataType.STRING,
+        required: true
     },
 
 });

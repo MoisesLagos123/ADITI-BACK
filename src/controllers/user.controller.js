@@ -47,17 +47,18 @@ export const deleteUser = async (req, res) => {
 export const updateUser = async (req, res) => {
     try{
         const { id } = req.params;
-        const { name,
-                lastName,
-                email,
-                pass 
-            } = req.body;
+        const { 
+            name,
+            lastName,
+            email,
+            pass 
+        } = req.body;
 
         const user = await User.findByPk(id);
-        name.length != 0 ? user.name = name : user.name = user.name
-        lastName.length != 0 ? user.lastName = lastName : user.lastName = user.lastName
-        email.length != 0 ? user.email = email : user.email = user.email
-        pass.length != 0 ? user.pass = pass : user.pass = user.pass
+        name.length != 0 ?      user.name = name :          user.name = user.name
+        lastName.length != 0 ?  user.lastName = lastName :  user.lastName = user.lastName
+        email.length != 0 ?     user.email = email :        user.email = user.email
+        pass.length != 0 ?      user.pass = pass :          user.pass = user.pass
         await user.save()
         res.sendStatus(204)
     }catch(error){
