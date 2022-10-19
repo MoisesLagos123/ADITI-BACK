@@ -5,6 +5,7 @@ import './models/modelShoes.js'
 import './models/modelType.js'
 import './models/model.js'
 import './models/device.js'
+import './models/user.js'
 
 
 
