@@ -23,13 +23,17 @@
 
 6. CONFIGURAR VARIABLES DE ENTORNO LOCALES: (crear archivo .env en la raiz del proyecto)
 
-    PORT = 3000
+PORT = 3000
 
-    DB_NAME = 'db_aditi'
-    DB_USER = 'postgres' 
-    DB_PASS = 'tu_contraseña'
-    DB_HOST = 'localhost'
-    DB_DIALECT = 'postgres'
+DB_NAME = 'db_aditi'
+DB_USER = 'postgres'
+DB_PASS = 'postgres'
+DB_HOST = 'localhost'
+DB_DIALECT = 'postgres'
+
+AUTH_SECRET = 'F2yWGBT1#2ZlWvM02pT@^aidinOp'
+AUTH_EXPIRE = '7d'
+AUTH_ROUNDS = '10'
 
 7. INICIAR SERVIDOR:
  

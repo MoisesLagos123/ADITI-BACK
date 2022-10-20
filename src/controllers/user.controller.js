@@ -1,4 +1,7 @@
 import { User } from "../models/user.js";
+import bcrypt from 'bcryptjs';
+import { authConfig } from '../config/Config.js'
+import  jwt  from "jsonwebtoken";
 
 export const getAllUser = async (req, res) => {
     try{
@@ -10,24 +13,36 @@ export const getAllUser = async (req, res) => {
         res.status(500).json({message: error.message}); 
     };
 };
-export const createUser = async (req, res) => {
+export const createUser = (req, res) => {
     try{
         const { 
             name,
             lastName,
             email,
-            pass  
+            pass
         } = req.body;
-        
-        if (name.length > 0 & lastName.length > 0 & email.length > 0 & pass.length > 0) {
-            await User.create({
-                name,
-                lastName,
-                email,
-                pass   
-            })
-            res.status(201).send('Objeto creado exitosamente');
-        }else{res.status(400).send('Uno o mas campos estan vacios'); };
+        bcrypt.hash(pass, Number.parseInt(authConfig.rounds), async (err, hash) => {
+            if (pass.length > 8) {
+                if (name.length > 0 & lastName.length > 0 & email.length > 0) {
+                    await User.create({
+                        name,
+                        lastName,
+                        email,
+                        pass: hash    
+                    }).then(user =>{
+                        let token = jwt.sign({user:user}, authConfig.secret,{
+                            expiresIn: authConfig.expires
+                        })
+
+                        res.json({
+                            message: 'Objeto creado exitosamente',
+                            user: user,
+                            token: token
+                        })
+                    }).catch (err=> {res.status(500).json(err.message)})
+                } else { res.status(400).send('Uno o mas campos estan vacios'); };
+            } else { res.status(400).send('La contraseña debe tener 8 o mas caracteres'); };
+        }); 
     } catch (error) {
         res.status(500).json({message: error.message}); 
     };

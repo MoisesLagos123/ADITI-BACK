@@ -1,6 +1,7 @@
 import DataType from 'sequelize';
 import {sequelize} from '../database/database.js';
 export const User = sequelize.define('user',{
+
     id:{
         type: DataType.INTEGER,
         primaryKey: true,
@@ -17,11 +18,15 @@ export const User = sequelize.define('user',{
     email: {
         type: DataType.STRING,
         required: true,
-        unique: true
+        unique: true,
+        validate:{
+            isEmail: {msg:"Correo no valido"}
+        }
+        
     },
     pass: {
         type: DataType.STRING,
-        required: true
+        required: true,
     },
 
 });
